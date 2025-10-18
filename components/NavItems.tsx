@@ -10,7 +10,7 @@ const NavItems = () => {
 
   const isActive = (path: string) => {
     if (path === '/') return pathname === '/';
-    // Match exact path or path segments (e.g., /search or /search/...)
+
     return pathname === path || pathname.startsWith(path + '/');
   };
 
