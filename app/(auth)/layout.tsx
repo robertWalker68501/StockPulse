@@ -12,7 +12,7 @@ const AuthLayout = ({ children }: { children: ReactNode }) => {
         >
           <Image
             src='/assets/icons/logo.svg'
-            alt='Signalist logo'
+            alt='StockPulse logo'
             width={140}
             height={32}
             className='h-8 w-auto'
