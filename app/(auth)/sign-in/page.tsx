@@ -55,21 +55,13 @@ const SignInPage = () => {
           placeholder='********'
           register={register}
           error={errors.password}
-         <InputField
-           type='password'
-           name='password'
-           label='Password'
-           placeholder='********'
-           register={register}
-           error={errors.password}
-           validation={{
-             required: 'Password is required',
-             minLength: {
-               value: 8,
-               message: 'Password must be at least 8 characters',
-             },
-           }}
-         />
+          validation={{
+            required: 'Password is required',
+            minLength: {
+              value: 8,
+              message: 'Password must be at least 8 characters',
+            },
+          }}
         />
 
         <Button
