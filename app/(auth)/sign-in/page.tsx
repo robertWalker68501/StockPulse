@@ -1,12 +1,17 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 
 import FooterLink from '@/components/forms/FooterLink';
 import InputField from '@/components/forms/InputField';
 import { Button } from '@/components/ui/button';
+import { signInWithEmail } from '@/lib/actions/auth.actions';
 
 const SignInPage = () => {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -21,9 +26,15 @@ const SignInPage = () => {
 
   const onSubmit = async (data: SignInFormData) => {
     try {
-      console.log(data);
+      const response = await signInWithEmail(data);
+
+      if (response.success) router.push('/');
     } catch (error) {
       console.error('Error', error);
+      toast.error('Sign in failed', {
+        description:
+          error instanceof Error ? error.message : 'Failed to sign in',
+      });
     }
   };
 

@@ -47,6 +47,7 @@ const eslintConfig = [
           },
         },
       ],
+      '@typescript-eslint/no-explicit-any': 'off',
       // You can optionally add specific Prettier rules here if needed,
       // though typically eslint-plugin-prettier handles this.
       // "prettier/prettier": "error",
